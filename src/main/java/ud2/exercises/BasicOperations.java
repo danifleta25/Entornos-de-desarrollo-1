@@ -20,5 +20,9 @@ public class BasicOperations {
         int multiplicacio = a * b;
 
         System.out.println("Multiplicació: " + multiplicacio);
+
+        int divisio = a / b;
+
+        System.out.println("Divisió: " + divisio);
     }
 }

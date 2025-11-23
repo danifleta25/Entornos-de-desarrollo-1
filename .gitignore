@@ -40,3 +40,6 @@ build/
 
 ###log###
 .log
+
+###tmp###
+/tmp/

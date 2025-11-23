@@ -16,5 +16,9 @@ public class BasicOperations {
         int resta = a - b;
 
         System.out.println("Resta: " + resta);
+
+        int multiplicacio = a * b;
+
+        System.out.println("Multiplicació: " + multiplicacio);
     }
 }

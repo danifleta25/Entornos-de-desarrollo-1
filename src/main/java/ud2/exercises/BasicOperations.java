@@ -8,5 +8,9 @@ public class BasicOperations {
         Scanner in = new Scanner(System.in).useLocale(Locale.US);
         int a = in.nextInt();
         int b = in.nextInt();
+
+        int suma = a + b;
+
+        System.out.println("Suma: " + suma);
     }
 }

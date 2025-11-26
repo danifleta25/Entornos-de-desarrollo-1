@@ -16,7 +16,13 @@ public class ArrayStats {
             array[i] = in.nextInt();
         }
 
+        int minim = Integer.MAX_VALUE;
         for(int i = 0; i < array.length; i++){
+            if(minim > array[i])
+                minim = array[i];
         }
+
+                System.out.printf("L'element més xicotet és: %d\n", minim);
+
     }
 }

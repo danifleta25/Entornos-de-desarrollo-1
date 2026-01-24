@@ -2,8 +2,9 @@ package ud1.examples;
 
 public class DebugRepetirNom {
     public static void main(String[] args) {
-        String name = "Nom";
-        String surname = "Cognom";
+
+        String name = "Dani";
+        String surname = "Fleta";
         int repeticions = 100;
 
         for (int i = 0; i < repeticions; i++) {

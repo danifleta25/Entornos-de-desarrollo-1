@@ -108,4 +108,23 @@ class PasswordStrengthCheckerTest {
 
 
 
+    @Test
+    void strongPasswordTest() {
+        String password = "12345aaAA";
+        PasswordStrengthChecker.PasswordStrength fortalezaActual = PasswordStrengthChecker.isPasswordStrong(password);
+        PasswordStrengthChecker.PasswordStrength fortalezaEsperada = PasswordStrengthChecker.PasswordStrength.STRONG;
+        assertEquals(fortalezaEsperada, fortalezaActual);
+    }
+
+
+    @Test
+    void notStrongPasswordTest() {
+        String password = "12345aaaa";
+        PasswordStrengthChecker.PasswordStrength fortalezaActual = PasswordStrengthChecker.isPasswordStrong(password);
+        PasswordStrengthChecker.PasswordStrength fortalezaEsperada = PasswordStrengthChecker.PasswordStrength.MEDIUM;
+        assertEquals(fortalezaEsperada, fortalezaActual);
+    }
+
+
+
 }

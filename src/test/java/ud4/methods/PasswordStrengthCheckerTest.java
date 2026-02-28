@@ -41,4 +41,42 @@ class PasswordStrengthCheckerTest {
         Assertions.assertEquals(fortalezaEsperada, fortalezaActual);
     }
 
+    @Test
+    void weakMinusculas(){
+        String password = "password";
+        PasswordStrengthChecker.PasswordStrength fortalezaActual = PasswordStrengthChecker.isPasswordStrong(password);
+        PasswordStrengthChecker.PasswordStrength fortalezaEsperada = PasswordStrengthChecker.PasswordStrength.WEAK;
+
+        assertEquals(fortalezaEsperada, fortalezaActual);
+    }
+
+    @Test
+    void weakMayusculas(){
+        String password = "PASSWORD";
+        PasswordStrengthChecker.PasswordStrength fortalezaActual = PasswordStrengthChecker.isPasswordStrong(password);
+        PasswordStrengthChecker.PasswordStrength fortalezaEsperada = PasswordStrengthChecker.PasswordStrength.WEAK;
+
+        assertEquals(fortalezaEsperada, fortalezaActual);
+    }
+
+    @Test
+    void weakNumeros(){
+        String password = "12345678";
+        PasswordStrengthChecker.PasswordStrength fortalezaActual = PasswordStrengthChecker.isPasswordStrong(password);
+        PasswordStrengthChecker.PasswordStrength fortalezaEsperada = PasswordStrengthChecker.PasswordStrength.WEAK;
+
+        assertEquals(fortalezaEsperada, fortalezaActual);
+    }
+
+    @Test
+    void testNotWeak(){
+        String password = "password123";
+        PasswordStrengthChecker.PasswordStrength fortalezaActual = PasswordStrengthChecker.isPasswordStrong(password);
+        PasswordStrengthChecker.PasswordStrength fortalezaEsperada = PasswordStrengthChecker.PasswordStrength.MEDIUM;
+
+        assertEquals(fortalezaEsperada, fortalezaActual);
+    }
+
+
+
 }

@@ -79,4 +79,33 @@ class PasswordStrengthCheckerTest {
 
 
 
+    @Test
+    void passwordMayusMinus(){
+        String password = "PasswordkweP";
+        PasswordStrengthChecker.PasswordStrength fortalezaActual = PasswordStrengthChecker.isPasswordStrong(password);
+        PasswordStrengthChecker.PasswordStrength fortalezaEsperada = PasswordStrengthChecker.PasswordStrength.MEDIUM;
+
+        assertEquals(fortalezaEsperada, fortalezaActual);
+    }
+
+    @Test
+    void passwordMayusNumber(){
+        String password = "PASSWORD123456";
+        PasswordStrengthChecker.PasswordStrength fortalezaActual = PasswordStrengthChecker.isPasswordStrong(password);
+        PasswordStrengthChecker.PasswordStrength fortalezaEsperada = PasswordStrengthChecker.PasswordStrength.MEDIUM;
+
+        assertEquals(fortalezaEsperada, fortalezaActual);
+    }
+
+    @Test
+    void passwordMinusNumber(){
+        String password = "password123456789";
+        PasswordStrengthChecker.PasswordStrength fortalezaActual = PasswordStrengthChecker.isPasswordStrong(password);
+        PasswordStrengthChecker.PasswordStrength fortalezaEsperada = PasswordStrengthChecker.PasswordStrength.MEDIUM;
+
+        assertEquals(fortalezaEsperada, fortalezaActual);
+    }
+
+
+
 }

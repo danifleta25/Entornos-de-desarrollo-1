@@ -22,13 +22,13 @@ public class PasswordStrengthChecker {
             return fortaleza;
         }
 
-        if(password.contains("[a-z]")){
+        if(password.matches(".*[a-z].*")){
             contadorFortaleza += 1;
         }
-        if(password.contains("[A-Z]")){
+        if(password.matches(".*[A-Z].*")){
             contadorFortaleza += 1;
         }
-        if(password.contains("[0-9]")){
+        if(password.matches(".*[0-9].*")){
             contadorFortaleza += 1;
         }
 

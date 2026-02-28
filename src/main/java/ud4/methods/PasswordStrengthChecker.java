@@ -14,12 +14,10 @@ public class PasswordStrengthChecker {
 
 
     public static PasswordStrength isPasswordStrong(String password){
-        PasswordStrength fortaleza = null;
         int contadorFortaleza = 0;
 
         if(password == null || password.length()<8){
-            fortaleza = PasswordStrength.INVALID;
-            return fortaleza;
+            return PasswordStrength.INVALID;
         }
 
         if(password.matches(".*[a-z].*")){
@@ -33,12 +31,12 @@ public class PasswordStrengthChecker {
         }
 
 
-        switch (contadorFortaleza){
-            case 1 -> fortaleza = PasswordStrength.WEAK;
-            case 2 -> fortaleza = PasswordStrength.MEDIUM;
-            case 3 -> fortaleza = PasswordStrength.STRONG;
-        }
+        return switch (contadorFortaleza){
+            case 1 -> PasswordStrength.WEAK;
+            case 2 -> PasswordStrength.MEDIUM;
+            case 3 -> PasswordStrength.STRONG;
+            default -> PasswordStrength.INVALID;
+        };
 
-        return fortaleza;
     }
 }

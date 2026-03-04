@@ -1,1 +1,1 @@
-Exam2: Creació exercici1.md
+# Exercici 1 - Nom Cognom

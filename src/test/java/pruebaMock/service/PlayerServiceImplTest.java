@@ -36,8 +36,8 @@ class PlayerServiceImplTest {
         //Then
         assertNotNull(resultado);
         assertFalse(resultado.isEmpty());
-        assertEquals("Lionel Messi", resultado.getFirst().getName());
-        assertEquals("Miami", resultado.getFirst().getTeam());
+        assertEquals("Lionel Messi", resultado.get(0).getName());
+        assertEquals("Miami", resultado.get(0).getTeam());
         verify(playerRepository).findAll();
     }
 

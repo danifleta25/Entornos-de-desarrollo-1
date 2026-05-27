@@ -1,0 +1,34 @@
+package exam3;
+
+import java.util.Objects;
+
+public class Category {
+    private String name;
+
+    public Category(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Category{" +
+                "name='" + name + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Category category)) return false;
+        return Objects.equals(name, category.name);
+    }
+
+}

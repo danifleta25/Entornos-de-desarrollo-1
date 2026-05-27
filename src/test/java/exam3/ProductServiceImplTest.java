@@ -6,10 +6,10 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import ud8.common.exception.ResourceNotFoundException;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 
 @ExtendWith(MockitoExtension.class)
@@ -25,6 +25,8 @@ class ProductServiceImplTest {
 
     private final Category categoria = new Category("ropa");
     private final Product producto = new Product("Camiseta", categoria);
+
+    private final Category nuevaCategoria = new Category("Prenda");
 
     @Nested
     class FindByNameTests{
@@ -55,6 +57,36 @@ class ProductServiceImplTest {
     }
 
 
+    @Nested
+    class SetCategoryTests{
+
+        @Test
+        void givenNewCategory_shouldReturnOldCategory() throws SameCategoryException {
+
+            Category antigua = productService.setCategory(producto, nuevaCategoria);
+
+            assertEquals(categoria, antigua);
+        }
+
+        @Test
+        void givenNewCategory_shouldSaveProduct() throws SameCategoryException {
+
+            productService.setCategory(producto, nuevaCategoria);
+
+            verify(productRepository).save(producto);
+
+        }
+
+
+        @Test
+        void givenExistingCategory_shouldTrowExceptionAndNotSaveProduct() {
+
+            assertThrows(SameCategoryException.class,
+                    () -> productService.setCategory(producto, categoria));
+
+            verify(productRepository, never()).save(producto);
+        }
+    }
 
 
 }

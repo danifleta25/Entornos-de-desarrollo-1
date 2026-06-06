@@ -10,4 +10,10 @@ class pruebaServiceImplTest {
     void sumar(){
 
     }
+
+    @Test
+    void restar(){
+
+
+    }
 }

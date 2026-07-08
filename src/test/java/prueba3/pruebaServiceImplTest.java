@@ -1,7 +1,20 @@
 package prueba3;
 
+
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class pruebaServiceImplTest {
 
+    @Test
+    void sumar(){
+
+    }
+
+    @Test
+    void restar(){
+
+
+    }
 }
